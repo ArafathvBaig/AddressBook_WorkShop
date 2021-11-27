@@ -80,6 +80,25 @@ public class AddressBook
 		}
 	}
 	
+	public void deleteContactDetails()
+	{
+		Scanner sc = new Scanner(System.in);
+        System.out.println("Enter The First Name to Delete Contact: ");
+        String name=sc.nextLine();
+        for (Contacts contact : contacts) 
+        {
+            if (name.equalsIgnoreCase(contact.getFirstName()))
+            {
+                System.out.println("Entered First Name Found in The Contacts, Deleting Contact");
+                contacts.remove(contact);
+            }
+            else
+            {
+                System.out.println("Entered First Name Not Found in The Contacts");
+            }
+        }
+    }
+	
 	public static void main(String[] args)
 	{
 		AddressBook ab = new AddressBook();
